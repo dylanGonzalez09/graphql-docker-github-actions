@@ -37,14 +37,14 @@ jobs:
         
     - name: Docker build
       env:
-        NEW_VERSION: ${{ steps.version.ouputs.version }}
+        NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
         docker build -t yaiirdev/github-actions-graphql:$NEW_VERSION .
         docker build -t yaiirdev/github-actions-graphql:latest .
 
     - name: Docker push
       env:
-        NEW_VERSION: ${{ steps.version.ouputs.version }}
+        NEW_VERSION: ${{ steps.version.outputs.version }}
       run: |
         docker push yaiirdev/github-actions-graphql:$NEW_VERSION
         docker push yaiirdev/github-actions-graphql:latest
