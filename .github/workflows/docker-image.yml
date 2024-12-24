@@ -29,7 +29,7 @@ jobs:
         
     - name: Docker build
       run: |
-        docker build yaiirdev/github-actions-graphql:0.0.2 .
+        docker build -t yaiirdev/github-actions-graphql:0.0.2 .
 
     - name: Docker push
       run: |
