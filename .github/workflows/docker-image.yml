@@ -26,4 +26,11 @@ jobs:
         echo "Iniciando el login"
         docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
         echo "Finalizando el login"
-      # run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+        
+    - name: Docker build
+      run: |
+        docker build yaiirdev/github-actions-graphql:0.0.2 .
+
+    - name: Docker push
+      run: |
+        docker push yaiirdev/github-actions-graphql:0.0.2
