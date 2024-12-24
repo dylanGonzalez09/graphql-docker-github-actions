@@ -24,6 +24,6 @@ jobs:
         DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
       run: |
         echo "Iniciando el login"
-        docker login -u DOCKERHUB_USER -p DOCKERHUB_PASSWORD
+        docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD
         echo "Finalizando el login"
       # run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
